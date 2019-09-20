@@ -1,0 +1,44 @@
+<% layout('layouts/loginBoilerplate') -%>
+
+<!-- START SECTION LOGIN -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="authorize_box">
+                    <div class="title_default_dark title_border text-center">
+                        <h4 class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Welcome to
+                            Clevebet ICO</h4>
+                        <p class="animation" data-animation="fadeInUp" data-animation-delay="0.4s">Reset your password
+                        </p>
+                    </div>
+                    <div class="field_form authorize_form">
+                        <form action="/reset/<%= token %>?_method=PUT" method="POST">
+                            <div class="form-group col-md-12 animation" data-animation="fadeInUp"
+                                data-animation-delay="0.6s">
+                                <label for="password">New Password</label>
+                                <input type="password" class="form-control" id="password" required=""
+                                    placeholder="New Password" name="password" autofocus>
+                            </div>
+                            <div class="form-group col-md-12 animation" data-animation="fadeInUp"
+                                data-animation-delay="0.7s">
+                                <label for="confirm">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirm" required=""
+                                    placeholder="Confirm Password" name="confirm" autofocus>
+                            </div>
+                            <div class="form-group col-md-12 text-center animation" data-animation="fadeInUp"
+                                data-animation-delay="0.8s">
+                                <button class="btn btn-default btn-radius" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="divider small_divider"></div>
+                <div class="text-center">
+                    <span class="animation" data-animation="fadeInUp" data-animation-delay="1s">Don't have an
+                        account?<a href="/sign-up"> Sign Up </a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

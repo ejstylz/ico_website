@@ -1,0 +1,159 @@
+<% layout('layouts/dashboardBoilerplate') -%>
+
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row page_title">
+      <div class="col-sm-6">
+        <h4>Welcome <%= currentUser.username %></h4>
+      </div>
+      <div class="col-sm-6">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">Home</a>
+          </li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-3 col-sm-6 mb-4">
+        <div class="box bg_primary">
+          <div class="box-head d-flex align-items-center justify-content-between">
+            <h3>Bitcoin</h3>
+            <i title="BTC" class="cc BTC-alt"></i>
+          </div>
+          <div class="box-body d-flex align-items-center justify-content-between">
+            <span>1 BTC = <%= btcPrice %> </span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 mb-4 mx-auto">
+
+        <div class="box bg_info">
+          <div class="box-head d-flex align-items-center justify-content-between">
+            <h3>Ethereum</h3>
+            <i class="cc ETC" title="ETC"></i>
+          </div>
+          <div class="box-body d-flex align-items-center justify-content-between">
+            <span>1 ETH = <%= ethPrice %> USD </span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 mb-4">
+        <div class="box bg_secondary">
+          <div class="box-head d-flex align-items-center justify-content-between">
+            <h3>Litecoin</h3>
+            <i class="cc LTC-alt" title="LTC"></i>
+          </div>
+          <div class="box-body d-flex align-items-center justify-content-between">
+            <span>1 LTC = <%= ltcPrice %> USD </span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 mb-4">
+        <div class="box bg_success">
+          <div class="box-head d-flex align-items-center justify-content-between">
+            <h3>Clevebet</h3>
+            <!-- <i class="cc NEO" title=""></i> -->
+          </div>
+          <div class="box-body d-flex align-items-center justify-content-between">
+            <span>1 CVB = 1 USD </span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-4 col-md-12">
+        <div class="card-header">Token Sale Begins In</div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="tk_countdown_time text-center" data-time="2019/10/10 00:00:00"></div>
+              <div class="d-flex justify-content-between mb-1">
+                <span>Sale Raised</span>
+                <span>Soft-caps</span>
+              </div>
+              <div class="progressbar">
+                <div class="progress-bar gradient" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                  aria-valuemax="100" style="width:2%"> </div>
+                <span class="progress_label" style="left: 30%"> <strong> 4,000,000 CVB </strong></span>
+                <span class="progress_label" style="left: 75%"> <strong> 10,000,000 CVB </strong></span>
+              </div>
+              <div class="text-center pt-3 pb-2">
+                <a class="btn btn-default" href="/buy">Buy Tokens <i class="ion-ios-arrow-thin-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card mb-4">
+        <div class="card-header text_md_center">TOKEN BALANCE</div>
+        <div class="card-body">
+          <div class="row align-items-center text_md_center">
+            <div class="col-xl-6 col-lg-12">
+              <h5 class="text-muted small">Total Balance</h5>
+              <h3 class="balance_text"><%= currentUser.tokensOwned.toFixed(4) %> CVB Tokens</h3>
+            </div>
+            <div class="col-xl-6 col-lg-12">
+              <button class="btn btn-default" id="bttn">Withdraw</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-header text_md_center">REFERRAL LINK</div>
+        <div class="card-body">
+          <div class="row align-items-center text_md_center">
+            <p>Share your unique referral link and get 10% referral bonus on any purchase made by a user who signs up
+              with your referral link.</p>
+            <div class="col-xl-6 col-lg-12">
+              <div class="copy-button">
+                <input type="text" class="form-control copy_input" readonly=""
+                  value="<%= hostName %>/sign-up?referrer=<%= currentUser._id %>"
+                  placeholder="<%= hostName %>/sign-up?referrer=<%= currentUser._id %>">
+                <span class="copy-link btn-default" data-toggle="tooltip" title="Copy to Clipboard">Copy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-header text_md_center">ICO Sales Timeline</div>
+        <div class="card-body">
+          <ul class="timeline_wrap list_none fc-scroll p-0">
+            <li>
+              <div class="timeline_icon tm_complete"></div>
+              <div class="timeline_content">
+                <h6>Stage 1: 1CVB = $1</h6>
+                <span>October 10, 2019</span>
+              </div>
+            </li>
+            <li>
+              <div class="timeline_icon"></div>
+              <div class="timeline_content">
+                <h6>Stage 2: 1CVB = $1.25</h6>
+                <span>January 10, 2020</span>
+              </div>
+            </li>
+            <li>
+              <div class="timeline_icon"></div>
+              <div class="timeline_content">
+                <h6>Stage 3: 1CVB = $1.5</h6>
+                <span>April 10, 2020</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
