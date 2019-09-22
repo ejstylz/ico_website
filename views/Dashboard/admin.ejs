@@ -18,8 +18,11 @@
                                     <tr>
                                         <!-- <th>ID</th> -->
                                         <th>Username</th>
+                                        <th>User ID</th>
                                         <th>Email</th>
                                         <th>Tokens Owned</th>
+                                        <th>Referral ID</th>
+                                        <th>Referral Tokens</th>
                                         <th>ERC 20 Address</th>
                                         <th>Withdrawal Status</th>
                                     </tr>
@@ -28,8 +31,11 @@
                                     <tr>
                                         <!-- <th>ID</th> -->
                                         <th>Username</th>
+                                        <th>User ID</th>
                                         <th>Email</th>
                                         <th>Tokens Owned</th>
+                                        <th>Referral ID</th>
+                                        <th>Referral Tokens</th>
                                         <th>ERC 20 Address</th>
                                         <th>Withdrawal Status</th>
                                     </tr>
@@ -39,8 +45,11 @@
                                     <tr>
                                         <!-- <td>1</td> -->
                                         <td><%= user.username %></td>
+                                        <td><%= user._id %></td>
                                         <td><%= user.email %></td>
                                         <td><%= user.tokensOwned %></td>
+                                        <td><%= user.referrer %></td>
+                                        <td><%= user.referralTokens %></td>
                                         <td><%= user.tokenAddress %></td>
                                         <td><%= user.withdrawalStatus %></td>
 

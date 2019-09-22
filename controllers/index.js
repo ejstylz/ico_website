@@ -244,7 +244,7 @@ module.exports = {
 												if (err) {
 													console.log(err)
 												} else {
-													user.tokensOwned += amount / 0.1;
+													user.referralTokens += amount / 0.1;
 													user.save();
 												}
 											});
@@ -307,7 +307,7 @@ module.exports = {
 												if (err) {
 													console.log(err)
 												} else {
-													user.tokensOwned += amount / 0.1;
+													user.referralTokens += amount / 0.1;
 													user.save();
 												}
 											});
@@ -370,7 +370,7 @@ module.exports = {
 												if (err) {
 													console.log(err)
 												} else {
-													user.tokensOwned += amount / 0.1;
+													user.referralTokens += amount / 0.1;
 													user.save();
 												}
 											});
@@ -434,10 +434,6 @@ module.exports = {
 			if (err) {
 				console.log(err);
 			} else {
-				// let email = users.email;
-				// let username = users.username;
-				// let tokensOwned = users.tokensOwned;
-				// let tokenAddress = users.tokenAddress;
 				res.render('Dashboard/admin', { title: 'Buy CVB Tokens', users });
 			}
 		});

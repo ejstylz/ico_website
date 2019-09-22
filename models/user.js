@@ -11,7 +11,9 @@ const UserSchema = new Schema({
 	withdrawalStatus: { type: String, default: "Inactive" },
 	resetPasswordToken: String,
 	resetPasswordExpires: Date,
-	referrer: String
+	referrer: String,
+	referralTokens: { type: Number, default: 0 }
+
 });
 
 UserSchema.plugin(passportLocalMongoose);
